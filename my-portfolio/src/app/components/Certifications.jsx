@@ -47,7 +47,7 @@ export default function Certifications() {
     return (
         <section 
             id="certifications" 
-            className="py-12 md:py-24 px-5 sm:px-6 bg-white dark:bg-gray-900 transition-colors duration-500 overflow-hidden"
+            className="py-12 md:py-24 px-5 sm:px-6 bg-white dark:bg-gray-950 transition-colors duration-500 overflow-hidden"
         >
             <div className="max-w-5xl mx-auto">
                 

@@ -8,7 +8,7 @@ export default function About() {
     return (
         <section
             id="about"
-            className="py-12 md:py-24 px-5 sm:px-6 dark:bg-gray-900 transition-colors duration-500 overflow-hidden"
+            className="py-12 md:py-24 px-5 sm:px-6 dark:bg-gray-950 transition-colors duration-500 overflow-hidden"
         >
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20">
 

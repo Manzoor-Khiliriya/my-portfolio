@@ -184,7 +184,7 @@ export default function Contact() {
               className="w-full flex items-center justify-center gap-2 py-4 text-lg font-semibold rounded-xl
                 bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg
                 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]
-                disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all duration-300"
             >
               <Send className="w-5 h-5" /> Send Message
             </button>
