@@ -17,9 +17,10 @@ export const metadata = {
   },
 };
 
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="transition-colors duration-300" suppressHydrationWarning>
       <body>
         <ThemeProvider>
           <NavbarWrapper />

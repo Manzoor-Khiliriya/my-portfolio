@@ -54,7 +54,7 @@ export default function Certifications() {
                 {/* Section Heading */}
                 <div className="text-center mb-16">
                     <p className="text-sm font-semibold uppercase text-blue-600 dark:text-blue-400 mb-2 tracking-widest">— Professional Validation</p>
-                    <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-gray-100 leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
                       Certifications
                     </h2>
                 </div>
@@ -67,7 +67,7 @@ export default function Certifications() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="space-y-6"
                 >
-                    <h3 className="text-3xl font-bold text-gray-800 dark:text-gray-200 mb-8 flex items-center">
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8 flex items-center">
                         <Award className="w-7 h-7 mr-3 text-blue-600 dark:text-blue-400" /> Key Certifications
                     </h3>
 

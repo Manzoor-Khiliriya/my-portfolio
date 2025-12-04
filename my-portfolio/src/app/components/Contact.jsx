@@ -72,7 +72,7 @@ export default function Contact() {
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">
             — Let's Connect
           </p>
-          <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-gray-100 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
             Ready to Build Together?
           </h2>
           <p className="mt-6 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">

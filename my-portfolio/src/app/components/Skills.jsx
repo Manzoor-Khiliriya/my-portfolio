@@ -9,7 +9,7 @@ export default function Skills() {
     const ACCENT_COLOR_CLASSES = {
         icon: "text-blue-600 dark:text-blue-400",
         bg: "bg-blue-100 dark:bg-blue-900/40",
-        text: "text-blue-800 dark:text-blue-300",
+        text: "text-gray-700 dark:text-gray-200",
     };
 
     // Mapped your specific skills to 7 distinct technical categories
@@ -87,7 +87,7 @@ export default function Skills() {
                     <p className="text-sm font-semibold uppercase text-blue-600 dark:text-blue-400 mb-2 tracking-widest">
                         — Core Strengths
                     </p>
-                    <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-gray-100 leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
                         My Technical Stack
                     </h2>
                 </div>
@@ -120,7 +120,7 @@ export default function Skills() {
                                     {category.skills.map((skill, skillIdx) => (
                                         <span
                                             key={skillIdx}
-                                            className={`px-4 py-1 text-sm font-medium rounded-full ${bg} ${text} 
+                                            className={`px-4 py-1 text-sm text-gray-700 dark:text-gray-300 font-medium rounded-full ${bg} ${text} 
                                             shadow-sm transition hover:scale-[1.05]`}
                                         >
                                             {skill}

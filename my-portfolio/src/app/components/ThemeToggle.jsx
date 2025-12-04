@@ -16,7 +16,7 @@ export default function ThemeToggle() {
       <motion.div
         layout
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="w-6 h-6 rounded-full flex items-center justify-center shadow-md bg-white dark:bg-black"
+        className="w-6 h-6 rounded-full flex items-center justify-center shadow-md bg-black dark:bg-black"
       >
         {theme === "light" ? (
           <Sun size={16} className="text-yellow-500" />

@@ -91,7 +91,7 @@ export default function Projects() {
                 {/* Section Heading */}
                 <div className="text-center mb-10">
                     <p className="text-sm font-semibold uppercase text-blue-600 dark:text-blue-400 mb-2 tracking-widest">— Detailed Work</p>
-                    <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-gray-100 leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
                         Featured Projects
                     </h2>
                 </div>

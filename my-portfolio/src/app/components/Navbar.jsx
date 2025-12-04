@@ -22,8 +22,8 @@ export default function Navbar() {
   // Always solid background (no transparency)
   const bg =
     theme === "dark"
-      ? "bg-gray-950/90  shadow-xl border-b border-gray-800"
-      : "bg-white/90  shadow-lg border-b border-gray-200";
+      ? "bg-gray-950 text-gray-200  shadow-xl border-b border-gray-800"
+      : "bg-white text-gray-900  shadow-lg border-b border-gray-200";
 
   const navLinks = [
     { name: "About", href: "#about" },
@@ -51,7 +51,7 @@ export default function Navbar() {
     <motion.nav
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 120, damping: 20 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bg}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-gray ${bg}`}
     >
       <div className="mx-auto px-6 lg:px-10">
         <div className="flex justify-between items-center h-20">
@@ -60,7 +60,7 @@ export default function Navbar() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100"
+            className="text-2xl font-extrabold tracking-tight dark:text-gray-100"
           >
             Manzoor A K
           </motion.div>
@@ -77,7 +77,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className="relative text-base font-medium transition-colors duration-300
-                    text-gray-600 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-300
+                    dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-300
                     after:content-[''] after:absolute after:bottom-[-6px] after:left-0 after:w-0 after:h-[3px] after:rounded-full
                     after:bg-blue-600 dark:after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full"
                 >
@@ -98,23 +98,21 @@ export default function Navbar() {
                     rel="noopener noreferrer"
                     whileHover={{ y: -3 }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-gray-600 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-300 transition-all duration-200"
+                    className="dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-300 transition-all duration-200"
                   >
                     <Icon size={20} />
                   </motion.a>
                 );
               })}
               {/* Theme Toggle for Desktop */}
-              <ThemeToggle />
             </div>
           </div>
 
           <div className="flex items-center gap-3 md:hidden z-50 relative">
-            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`
-      text-gray-800 dark:text-gray-300 
+      dark:text-gray-100 
       hover:text-blue-600 dark:hover:text-blue-400 
       transition-transform duration-300 focus:outline-none 
       ${isOpen ? "rotate-90" : "rotate-0"} 
@@ -151,7 +149,7 @@ export default function Navbar() {
                 <motion.button
                   onClick={() => setIsOpen(false)}
                   whileTap={{ scale: 0.9 }}
-                  className="cursor-pointer"
+                  className="cursor-pointer rounded-full p-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
                 >
                   <X className="h-6 w-6 text-gray-700 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-200 text-2xl font-bold z-50 transition-transform duration-300 hover:rotate-180" />
                 </motion.button>

@@ -1,9 +1,12 @@
+// WhatsAppChatButton.jsx
 "use client";
-import { useState } from "react";
+import Link from "next/link";
+import { useState, useRef, useEffect } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsAppChatButton() {
   const [isOpen, setIsOpen] = useState(false);
+  const buttonRef = useRef(null); 
 
   const whatsappNumber = "+918086378480";
   const whatsappMessage =
@@ -12,42 +15,59 @@ export default function WhatsAppChatButton() {
     whatsappMessage
   )}`;
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (buttonRef.current && !buttonRef.current.contains(event.target) && isOpen) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]); 
+
   return (
-    <div className="fixed bottom-5 right-6 z-50 flex flex-col items-end">
+    <div 
+      ref={buttonRef} 
+      className="fixed bottom-5 right-6 z-50 flex flex-col items-end group"
+    >
       {/* WhatsApp Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-[#25D366] hover:bg-[#1EBE57] cursor-pointer text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-110"
+        className="bg-[#25D366] hover:bg-[#1EBE57] cursor-pointer text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl transition-transform hover:scale-110 relative z-50"
       >
         <FaWhatsapp className="w-8 h-8" />
       </button>
 
       {/* Popup Card */}
-      {isOpen && (
-        <div className="mt-4 w-72 bg-white shadow-2xl rounded-xl overflow-hidden animate-fadeIn">
+      <div 
+        className={`absolute bottom-full mb-4 w-72 bg-white shadow-2xl rounded-xl overflow-hidden
+          transition-all duration-300 ease-in-out transform origin-bottom-right
+          ${isOpen 
+            ? 'scale-100 opacity-100 translate-y-0' 
+            : 'scale-90 opacity-0 pointer-events-none'
+          }`
+        }
+      >
           <div className="p-4 flex flex-col items-start">
             <h4 className="text-lg font-semibold text-gray-800">Hello!</h4>
             <p className="text-gray-600 text-sm mt-1">
               Let’s chat on WhatsApp.
             </p>
-            <a
+            <Link
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 w-full inline-flex items-center justify-center bg-[#25D366] text-white font-medium py-2 px-4 rounded-lg shadow-md hover:bg-[#1EBE57] transition-colors"
             >
               <FaWhatsapp className="mr-2" /> Chat Now
-            </a>
+            </Link>
           </div>
-        </div>
-      )}
+      </div>
 
-      {/* Optional tooltip when not clicked */}
-      {!isOpen && (
-        <div className="absolute right-full bottom-1/2 translate-y-1/2 mr-4 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none select-none transition-opacity duration-300 whitespace-nowrap">
-          Chat with me on WhatsApp
-        </div>
-      )}
     </div>
   );
 }
